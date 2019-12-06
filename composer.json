@@ -1,0 +1,17 @@
+{
+    "name": "atlas/gtechmx",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "BetoOrtega",
+            "email": "jortega@reedexpo.com"
+        },
+        {
+            "name": "Miguel Zubiate",
+            "email": "mzubiate@reedexpo.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
