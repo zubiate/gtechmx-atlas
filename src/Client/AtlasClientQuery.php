@@ -13,9 +13,13 @@ class AtlasClientQuery extends AtlasLoadQuery
 
     public function exhibitingOrganisations($query = false)
     {
-        $query = $this->getExhibitingOrganisations( $query);
+        $query = $this->getExhibitingOrganisations($query);
         return $this->query($query);
     }
-
- 
+    
+    public function exhibitingOrganisationsMultilingual($query = false)
+    {
+        $query = $this->getExhibitingOrganisationsMultilingual($query);
+        return $this->query($query);
+    }
 }
