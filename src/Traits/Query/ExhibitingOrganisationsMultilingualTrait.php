@@ -4,7 +4,7 @@ namespace Gtechmx\Atlas\Traits\Query;
 
 trait ExhibitingOrganisationsMultilingualTrait
 {
-    protected  function geExhibitingOrganisationsMultilingual($query)
+    protected  function getExhibitingOrganisationsMultilingual($query)
     {
         if (!$query) {
             return self::fullExhibitingOrganisationsMultilingualQuery();
