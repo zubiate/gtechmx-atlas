@@ -5,10 +5,13 @@ namespace Gtechmx\Atlas\Client;
 use Gtechmx\Atlas\Support\AtlasClient;
 use Gtechmx\Atlas\Traits\Query\EventEditionsTrait;
 use Gtechmx\Atlas\Traits\Query\ExhibitingOrganisationsTrait;
+use Gtechmx\Atlas\Traits\Query\ExhibitingOrganisationsMultilingualTrait;
 
 class AtlasLoadQuery extends AtlasClient
 {
-   use EventEditionsTrait, ExhibitingOrganisationsTrait;
+   use EventEditionsTrait, 
+       ExhibitingOrganisationsTrait, 
+       ExhibitingOrganisationsMultilingualTrait;
 
    public  $event_id, $exhibitor_id;
 
