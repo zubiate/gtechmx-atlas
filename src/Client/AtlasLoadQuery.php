@@ -18,10 +18,10 @@ class AtlasLoadQuery extends AtlasClient
    public $event_id = null;
    public $exhibitor_id = null;
    public $organisation_id = null;
-   public $query = null;
+   public $select = null;
    
-   public function query($query){
-       $this->query = $query;
+   public function query($select){
+       $this->select = $select;
        return $this;
    }
 

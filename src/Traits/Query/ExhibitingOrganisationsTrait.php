@@ -16,7 +16,7 @@ trait ExhibitingOrganisationsTrait
 
     private  function fullExhibitingOrganisationsQuery()
     {
-        $query = $this->query ?? 'id,
+        $query = $this->select ?? 'id,
     countryCode,
     companyName,
     organisationId,

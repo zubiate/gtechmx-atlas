@@ -14,7 +14,7 @@ trait ExhibitingOrganisationsMultilingualTrait
 
     private function fullExhibitingOrganisationsMultilingualQuery()
     {
-        $query = $this->query ?? 'companyName,
+        $query = $this->select ?? 'companyName,
       multilingual {
           addressLine1,
           displayName,

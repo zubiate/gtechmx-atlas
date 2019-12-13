@@ -15,7 +15,7 @@ trait EventEditionsTrait
 
     private function fullQuery()
     {
-        $query = $this->query ?? 'name, id';
+        $query = $this->select ?? 'name, id';
 
         return "{
             eventEditions {

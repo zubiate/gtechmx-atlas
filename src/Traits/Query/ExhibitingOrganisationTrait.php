@@ -16,7 +16,7 @@ trait ExhibitingOrganisationTrait
 
     private  function fullExhibitingOrganisationQuery()
     {
-        $query = $this->query ?? 'accompanyingWebsiteUrl,
+        $query = $this->select ?? 'accompanyingWebsiteUrl,
     companyName,
     contactEmail,
     entitlements{
