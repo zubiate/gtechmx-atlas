@@ -4,21 +4,17 @@ namespace Gtechmx\Atlas\Traits\Query;
 
 trait ExhibitingOrganisationsMultilingualTrait
 {
-    protected  function getExhibitingOrganisationsMultilingual($query)
+    protected function getExhibitingOrganisationsMultilingual($query)
     {
         if (!$query) {
-            return self::fullExhibitingOrganisationsMultilingualQuery();
+            return $this->fullExhibitingOrganisationsMultilingualQuery();
         }
         return $query;
     }
 
-    private  function fullExhibitingOrganisationsMultilingualQuery()
+    private function fullExhibitingOrganisationsMultilingualQuery()
     {
-        return '{
-  exhibitingOrganisationsMultilingual(
-    eventEditionId: "'.$this->event_id.'"
-  ){
-      companyName,
+        $query = $this->query ?? 'companyName,
       multilingual {
           addressLine1,
           displayName,
@@ -47,7 +43,13 @@ trait ExhibitingOrganisationsMultilingualTrait
       phone,
       exhibitorStatus,
       organisationId,
-      id
+      id';
+
+        return '{
+  exhibitingOrganisationsMultilingual(
+    eventEditionId: "'.$this->event_id.'"
+  ){
+      '.$query.'
   }
 }';
     }

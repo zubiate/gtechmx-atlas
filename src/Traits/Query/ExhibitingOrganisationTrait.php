@@ -8,7 +8,7 @@ trait ExhibitingOrganisationTrait
     {
  
         if (!$query) {
-            return self::fullExhibitingOrganisationQuery();
+            return $this->fullExhibitingOrganisationQuery();
         }
 
         return $query;
@@ -16,13 +16,7 @@ trait ExhibitingOrganisationTrait
 
     private  function fullExhibitingOrganisationQuery()
     {
-        return '{
-    exhibitingOrganisation(
-    exhibitingOrganisationId: "'.$this->exhibitor_id.'",
-    eventEditionId: "'.$this->event_id.'",
-    organisationId: "'.$this->organisation_id.'")
-  {
-    accompanyingWebsiteUrl,
+        $query = $this->query ?? 'accompanyingWebsiteUrl,
     companyName,
     contactEmail,
     entitlements{
@@ -114,8 +108,16 @@ trait ExhibitingOrganisationTrait
       name
     },
     website
-  }
-}
+  }';
+
+        return '{
+    exhibitingOrganisation(
+    exhibitingOrganisationId: "'.$this->exhibitor_id.'",
+    eventEditionId: "'.$this->event_id.'",
+    organisationId: "'.$this->organisation_id.'")
+    {
+        '.$query.'
+    }
 ';
     }
 }

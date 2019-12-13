@@ -15,9 +15,15 @@ class AtlasLoadQuery extends AtlasClient
        ExhibitingOrganisationsMultilingualTrait,
        ExhibitingOrganisationTrait;
 
-   public  $event_id = null;
-   public  $exhibitor_id = null;
-   public  $organisation_id = null;
+   public $event_id = null;
+   public $exhibitor_id = null;
+   public $organisation_id = null;
+   public $query = null;
+   
+   public function query($query){
+       $this->query = $query;
+       return $this;
+   }
 
    public function setEvent($event){
        $this->event_id = $event;

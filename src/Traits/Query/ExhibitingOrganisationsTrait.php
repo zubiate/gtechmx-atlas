@@ -8,7 +8,7 @@ trait ExhibitingOrganisationsTrait
     {
  
         if (!$query) {
-            return self::fullExhibitingOrganisationsQuery();
+            return $this->fullExhibitingOrganisationsQuery();
         }
 
         return $query;
@@ -16,11 +16,7 @@ trait ExhibitingOrganisationsTrait
 
     private  function fullExhibitingOrganisationsQuery()
     {
-        return '{
-  exhibitingOrganisations(
-    eventEditionId: "'.$this->event_id.'"
-  ){
-    id,
+        $query = $this->query ?? 'id,
     countryCode,
     companyName,
     organisationId,
@@ -35,7 +31,13 @@ trait ExhibitingOrganisationsTrait
         responses{
             answerId
         }
-    }
+    }';
+
+        return '{
+  exhibitingOrganisations(
+    eventEditionId: "'.$this->event_id.'"
+  ){
+    '.$query.'
   }
 }';
     }
