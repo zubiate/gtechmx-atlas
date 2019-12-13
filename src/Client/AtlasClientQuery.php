@@ -10,6 +10,12 @@ class AtlasClientQuery extends AtlasLoadQuery
         $query = $this->getEventEditions($query);
         return $this->query($query);
     }
+    
+    public function exhibitingOrganisation($query = false)
+    {
+        $query = $this->getExhibitingOrganisation($query);
+        return $this->query($query);
+    }
 
     public function exhibitingOrganisations($query = false)
     {
