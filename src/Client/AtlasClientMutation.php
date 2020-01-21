@@ -3,6 +3,7 @@
 namespace Gtechmx\Atlas\Client;
 
 
+
 class AtlasClientMutation extends AtlasLoadMutation
 {
 
@@ -12,5 +13,9 @@ class AtlasClientMutation extends AtlasLoadMutation
         return $this->mutation($query);
     }
 
+    public function createVisitorRegistration($user){
+        $query = $this->setCreateVisitorRegistration($user);
+        return $this->mutation($query);
+    }
+
 }
- 

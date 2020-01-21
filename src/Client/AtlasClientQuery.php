@@ -10,7 +10,7 @@ class AtlasClientQuery extends AtlasLoadQuery
         $query = $this->getEventEditions($query);
         return $this->query($query);
     }
-    
+
     public function exhibitingOrganisation($query = false)
     {
         $query = $this->getExhibitingOrganisation($query);
@@ -22,10 +22,16 @@ class AtlasClientQuery extends AtlasLoadQuery
         $query = $this->getExhibitingOrganisations($query);
         return $this->query($query);
     }
-    
+
     public function exhibitingOrganisationsMultilingual($query = false)
     {
         $query = $this->getExhibitingOrganisationsMultilingual($query);
+        return $this->query($query);
+    }
+
+    public function exhibitorProfileQuestions($query = false)
+    {
+        $query = $this->getExhibitorProfileQuestions($query);
         return $this->query($query);
     }
 }
